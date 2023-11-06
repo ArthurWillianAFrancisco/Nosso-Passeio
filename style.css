@@ -1,0 +1,57 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body#corpo{
+    background-color:rgba(132, 238, 123, 0.789);
+}
+header{
+    background-color: aliceblue;
+    min-height: 1200px;
+    text-align: center;
+    padding-top: 40px;
+    position: static;
+
+    font-size: 1.2em;
+    max-width: 1200px;
+    padding-right: 10px;
+    padding-left: 10px;
+    margin: auto;
+    margin-left: 18.5%;
+    margin-right: 18.5%;
+    padding-bottom: 50px;
+}
+header > h1{
+    color: green;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 2.5rem;
+    font-weight: normal;
+    font-weight: bolder;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.267);
+}
+
+img{
+    margin: 50px;
+    width: 1100;
+}
+
+#centreliza{
+    border: 1px solid black;
+}
+
+p{
+    font-size: large;
+}
+
+input{
+    margin-bottom: 10px;
+}
+button{
+    font-size: large;
+    background-color: darkblue;
+    border-radius: 10px;
+    padding: 5px;
+    margin: auto;
+}
