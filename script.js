@@ -1,9 +1,8 @@
 const video = document.querySelector('video');
+const btnChangeCamera =document.querySelector('#btnChangeCamera')
  
-
-video.getTracks().forEach((track) => {
-    track.stop()
-})
+let useFrontCamera = true;
+ 
 
 navigator.mediaDevices.getUserMedia({video:true})
 .then(stream => {
@@ -13,23 +12,8 @@ navigator.mediaDevices.getUserMedia({video:true})
 .catch(error => {
     console.log(error);
 });
-const constraints = {
-    video: {
-        width: {
-            min: 1280,
-            max: 1920,
-        },
-        height: {
-            min: 720,
-            max: 1080
-        },
-        facingMode: {
-            exact: 'environment'
-        }
-    },
-};
 
-document.querySelector('button').addEventListener('click', () => {
+document.querySelector('#tirarFoto').addEventListener('click', () => {
     var canvas = document.querySelector('canvas');
     canvas.height = video.videoHeight;
     canvas.width = video.videoWidth;
@@ -41,4 +25,12 @@ document.querySelector('button').addEventListener('click', () => {
     link.textContent = 'Clique para baixar a imagem'
     document.body.appendChild(link);
     nome++;
+});
+
+
+// switch camera
+btnChangeCamera.addEventListener("click", function () {
+    useFrontCamera = !useFrontCamera;
+
+    initializeCamera();
 });
