@@ -1,5 +1,10 @@
 const video = document.querySelector('video');
  
+
+video.getTracks().forEach((track) => {
+    track.stop()
+})
+
 navigator.mediaDevices.getUserMedia({video:true})
 .then(stream => {
     video.srcObject = stream;
