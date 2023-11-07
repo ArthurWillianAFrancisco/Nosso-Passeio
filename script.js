@@ -1,5 +1,5 @@
 const video = document.querySelector('video');
-
+var nome = 0
 navigator.mediaDevices.getUserMedia({video:true})
 .then(stream => {
     video.srcObject = stream;
@@ -15,11 +15,12 @@ document.querySelector('button').addEventListener('click', () => {
     canvas.width = video.videoWidth
     var context = canvas.getContext('2d');
     context.drawImage(video, 0, 0)
-    var link = document.createElement('a');
+    var link = document.createElement(nome);
     link.download = 'fotp.png';
     link.href = canvas.toDataURL();
     link.textContent = 'Clique para baixar a imagem'
     document.body.appendChild(link);
+    nome++;
 });
 
 async function getDevices() {
