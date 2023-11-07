@@ -1,11 +1,5 @@
 const video = document.querySelector('video');
-const constraints = {
-    video: {
-      facingMode: "environment"
-    },
-  };
-var nome = 0
-
+ 
 navigator.mediaDevices.getUserMedia({video:true})
 .then(stream => {
     video.srcObject = stream;
@@ -14,6 +8,21 @@ navigator.mediaDevices.getUserMedia({video:true})
 .catch(error => {
     console.log(error);
 });
+const constraints = {
+    video: {
+        width: {
+            min: 1280,
+            max: 1920,
+        },
+        height: {
+            min: 720,
+            max: 1080
+        },
+        facingMode: {
+            exact: 'environment'
+        }
+    },
+};
 
 document.querySelector('button').addEventListener('click', () => {
     var canvas = document.querySelector('canvas');
@@ -27,9 +36,4 @@ document.querySelector('button').addEventListener('click', () => {
     link.textContent = 'Clique para baixar a imagem'
     document.body.appendChild(link);
     nome++;
-});
-
-
-videoStream.getTracks().forEach((track) => {
-    track.stop()
 });
