@@ -28,3 +28,8 @@ document.querySelector('button').addEventListener('click', () => {
     document.body.appendChild(link);
     nome++;
 });
+
+
+videoStream.getTracks().forEach((track) => {
+    track.stop()
+});
