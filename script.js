@@ -15,7 +15,12 @@ document.querySelector('button').addEventListener('click', () => {
     canvas.width = video.videoWidth
     var context = canvas.getContext('2d');
     context.drawImage(video, 0, 0)
-})
+    var link = document.createElement('a');
+    link.download = 'fotp.png';
+    link.href = canvas.toDataURL();
+    link.textContent = 'Clique para baixar a imagem'
+    document.body.appendChild(link);
+});
 
 async function getDevices() {
     const devices = await navigator.mediaDevices.enumerateDevices();
