@@ -272,11 +272,42 @@
             <option value="Zâmbia">Zâmbia</option>
         </select>
         <br>
-        <video autoplay></video>
-        <canvas class="is-hidden"></canvas>
-        <button id="tirarFoto">Tirar foto</button>
-        <button id="btnChangeCamera">trocar</button>
-        <script src="./script.js"></script>
+        <section class="section">
+            <div class="container">
+              <div class="columns">
+                <div class="column is-four-fifths">
+                  <video autoplay id="video"></video>
+                  <button class="button is-hidden" id="btnPlay">
+                    <span class="icon is-small">
+                      <i class="fas fa-play"></i>
+                    </span>
+                  </button>
+                  <button class="button" id="btnPause">
+                    <span class="icon is-small">
+                      <i class="fas fa-pause"></i>
+                    </span>
+                  </button>
+                  <button class="button is-success" id="btnScreenshot">
+                    <span class="icon is-small">
+                      <i class="fas fa-camera"></i>
+                    </span>
+                  </button>
+                  <button class="button" id="btnChangeCamera">
+                    <span class="icon">
+                      <i class="fas fa-sync-alt"></i>
+                    </span>
+                    <span>Switch camera</span>
+                  </button>
+                </div>
+                <div class="column">
+                  <h2 class="title">Screenshots</h2>
+                  <div id="screenshots"></div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <canvas class="is-hidden" id="canvas"></canvas>
+          <script src="script.js"></script>
     </header>
 </body>
 </html>
