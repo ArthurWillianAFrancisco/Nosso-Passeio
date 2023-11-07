@@ -34,3 +34,26 @@ btnChangeCamera.addEventListener("click", function () {
 
     initializeCamera();
 });
+// stop video stream
+function stopVideoStream() {
+    if (videoStream) {
+        videoStream.getTracks().forEach((track) => {
+        track.stop();
+        });
+    }
+    }
+
+// initialize
+async function initializeCamera() {
+stopVideoStream();
+constraints.video.facingMode = useFrontCamera ? "user" : "environment";
+
+    try {
+        videoStream = await navigator.mediaDevices.getUserMedia(constraints);
+        video.srcObject = videoStream;
+    } catch (err) {
+        alert("Could not access the camera");
+    }
+}
+
+initializeCamera();
