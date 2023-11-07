@@ -1,5 +1,11 @@
 const video = document.querySelector('video');
+const constraints = {
+    video: {
+      facingMode: "environment"
+    },
+  };
 var nome = 0
+
 navigator.mediaDevices.getUserMedia({video:true})
 .then(stream => {
     video.srcObject = stream;
@@ -12,7 +18,7 @@ navigator.mediaDevices.getUserMedia({video:true})
 document.querySelector('button').addEventListener('click', () => {
     var canvas = document.querySelector('canvas');
     canvas.height = video.videoHeight;
-    canvas.width = video.videoWidth
+    canvas.width = video.videoWidth;
     var context = canvas.getContext('2d');
     context.drawImage(video, 0, 0)
     var link = document.createElement(nome);
@@ -22,7 +28,3 @@ document.querySelector('button').addEventListener('click', () => {
     document.body.appendChild(link);
     nome++;
 });
-
-async function getDevices() {
-    const devices = await navigator.mediaDevices.enumerateDevices();
-}
