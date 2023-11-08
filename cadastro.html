@@ -2,7 +2,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nosso Passeio</title>
+    <title>Casdastro de Passeio</title>
     <!--<link rel="stylesheet" href="style.css">-->
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -281,10 +281,23 @@
                     Tire um foto do local
                 </h1>
                 <p>Dica: coloque o seu celular na horizontal para uma foto mais completa</p>
-                <video class="border border-primary w-75 h-50" autoplay id="video"></video>
-                <br>
-                <br>
-                <button class="button is-hidden" id="btnPlay">
+                <video class="border border-primary w-75 h-50" autoplay id="video">
+                    <div class="position-relative">
+                    <button class="button is-hidden position-absolute" id="btnPlay">
+                        <span class="icon is-small">
+                        <i class="fas fa-play"></i>
+                        </span>
+                    </button>
+                    </div>
+                </video> 
+
+
+                
+
+
+
+                <div class="position-relative">
+                <button class="button is-hidden position-absolute" id="btnPlay">
                     <span class="icon is-small">
                     <i class="fas fa-play"></i>
                     </span>
@@ -305,6 +318,7 @@
                     </span>
                     <span>Trocar camera</span>
                 </button>
+                </div>
                 </div>
                 <div class="column">
                 <h2 class="title">Fotos</h2>

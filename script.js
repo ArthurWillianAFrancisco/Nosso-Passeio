@@ -64,15 +64,6 @@
       screenshotsContainer.prepend(img);
     });
     
-    // take screenshot
-    video.addEventListener("click", function () {
-      const img = document.createElement("img");
-      canvas.width = video.videoWidth;
-      canvas.height = video.videoHeight;
-      canvas.getContext("2d").drawImage(video, 0, 0);
-      img.src = canvas.toDataURL("image/png");
-      screenshotsContainer.prepend(img);
-    });
   
     // switch camera
     btnChangeCamera.addEventListener("click", function () {
@@ -104,4 +95,4 @@
     }
   
     initializeCamera();
-  })();
+  })();S
