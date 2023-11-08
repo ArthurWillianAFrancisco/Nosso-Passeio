@@ -2,8 +2,8 @@
     if (
       !"mediaDevices" in navigator ||
       !"getUserMedia" in navigator.mediaDevices
-    ) {
-      alert("Camera API is not available in your browser");
+    ){
+      alert("Não consegimos conectar com sua camera");
       return;
     }
   
@@ -90,7 +90,7 @@
         videoStream = await navigator.mediaDevices.getUserMedia(constraints);
         video.srcObject = videoStream;
       } catch (err) {
-        alert("Could not access the camera");
+        alert("Desculpe não conseguimos acessar sua camera, verifique se você permitiu o acesso");
       }
     }
   
