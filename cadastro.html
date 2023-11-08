@@ -3,12 +3,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Casdastro de Passeio</title>
-    <!--<link rel="stylesheet" href="style.css">-->
+
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
-<body class="row p-0 m-0 pt-3 justify-content-lg-center" style="background-color: #496E51;" id="corpo">
-    <header class="col-lg-9 bg-light pt-3 p-0" id="centreliza">
+<body class="row p-0 m-0 justify-content-lg-center" style="background-color: #496E51;" id="corpo">
+    <header class="col-lg-9 bg-light pt-3 p-2" id="centreliza">
         <div class="form-floating">
             <input type="text" class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></input>
             <label for="floatingTextarea">Qual o nome do local?</label>
@@ -19,7 +19,7 @@
             <label for="floatingTextarea2">Descreva o lugar, conte o que ele tem de melhor ou <br> explique as sua principais atividades.</label>
         </div>
         <br>
-        <select name="paises" id="paises">
+        <select class="w-25" name="paises" id="paises">
             <option value="Brasil" selected="selected">Brasil</option>
             <option value="Afeganistão">Afeganistão</option>
             <option value="África do Sul">África do Sul</option>
@@ -287,10 +287,12 @@
                     Tire um foto do local
                 </h1>
                 <p>Dica: coloque o seu celular na horizontal para uma foto mais completa</p>
-                
-                <video class="border border-primary m-2 w-100 h-auto" autoplay id="video"></video> 
+                <div class="d-flex justify-content-center">
+                    <video class="border border-primary m-2 w-100 h-auto" autoplay id="video"></video> 
+                </div>
 
-                <button class="button btn btn-secondary btn-l is-hidden w-10" id="btnPlay">
+                <div class="d-flex justify-content-center">
+                <!--<button class="button btn btn-secondary btn-l is-hidden w-10" id="btnPlay">
                     <span class="icon is-small">
                     <i class="fas fa-play"></i>
                     </span>
@@ -299,13 +301,13 @@
                     <span class="icon is-small">
                     <i class="fas fa-pause"></i>
                     </span>
-                </button>
-                <button class="button btn btn-secondary btn-l is-success" id="btnScreenshot">
+                </button>-->
+                <button class="button btn btn-primary btn-l p-3 w-25 m-2 is-success" id="btnScreenshot">
                     <span class="icon is-small">
                     <i class="fas fa-camera"></i>
                     </span>
                 </button>
-                <button class="button btn btn-secondary btn-l" id="btnChangeCamera">
+                <button class="button btn btn-secondary btn-l p-3 m-2" id="btnChangeCamera">
                     <span class="icon">
                     <i class="fas fa-sync-alt"></i>
                     </span>
@@ -316,6 +318,7 @@
                 <h2 class="title">Fotos</h2>
                 <div id="screenshots w-75 h-45"></div>
                 <br>
+                </div>
                 </div>
             </div>
             </div>
