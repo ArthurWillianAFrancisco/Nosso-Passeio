@@ -21,10 +21,10 @@
     const constraints = {
       video: {
         width: {
-          ideal: 1080,
+          ideal: 1920,
         },
         height: {
-          ideal: 720,
+          ideal: 1080,
         },
       },
     };
