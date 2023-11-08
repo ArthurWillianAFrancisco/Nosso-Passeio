@@ -20,12 +20,8 @@
     // video constraints
     const constraints = {
       video: {
-        width: {
-          ideal: 2040,
-        },
-        height: {
-          ideal: 1080,
-        },
+        width: 1080,
+        aspectRatio:21/9
       },
     };
   
