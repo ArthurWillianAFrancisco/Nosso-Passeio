@@ -21,8 +21,8 @@
     const constraints = {
       video: {
         width: 1080,
-        aspectRatio:21/9
-      },
+        aspectRatio:9/21
+      }
     };
   
     // use front face camera
