@@ -5,8 +5,10 @@ function errorLocalizaçao() {
 let h2 = document.querySelector('h2');
 var map;
 
-function success(lati, logn){
-   
+function success(pos){
+    console.log(pos.coords.latitude, pos.coords.longitude);
+    h2.textContent = `Latitude:${pos.coords.latitude}, Longitude:${pos.coords.longitude}`;
+
     if (map === undefined) {
         map = L.map('mapid').setView([pos.coords.latitude, pos.coords.longitude], 13);
     } else {
