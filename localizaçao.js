@@ -61,7 +61,7 @@ function success(pos){
 
     L.marker([pos.coords.latitude, pos.coords.longitude]).addTo(map)
         .bindPopup('Eu estou aqui!')
-        .openPopup();
+        //.openPopup();
 }
 
 function error(err){
