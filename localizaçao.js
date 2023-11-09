@@ -36,7 +36,6 @@ function mostraLocalizaçao(pos){
     map.addLayer(layer)
 }*/
 
-var btn = document.querySelector('button')
 
 function errorLocalizaçao() {
     console.log("Ero ao obter a localização")
@@ -48,26 +47,6 @@ var map;
 function success(pos){
     console.log(pos.coords.latitude, pos.coords.longitude);
     h2.textContent = `Latitude:${pos.coords.latitude}, Longitude:${pos.coords.longitude}`;
-
-    /*if(map === undefined){
-        map = L.map('mapid').setView([pos.coords.latitude, pos.coords.longitude], 13);
-    } else{
-        map.remove();
-        map = L.map('mapid').setView([pos.coords.latitude, pos.coords.longitude], 13);
-    }*/
-
-    map = L.map('mapid').setView([pos.coords.latitude, pos.coords.longitude], 13);
-
-    L.tileLayer('https://tiles.stadiamaps.com/tiles/outdoors/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-    }).addTo(map);
-
-    var lati = pos.coords.latitude
-    var long = pos.coords.longitude
-
-    L.marker([lati, long ]).addTo(map)
-        .bindPopup('Eu estou aqui!')
-        .openPopup();
 }
 
 function error(err){
