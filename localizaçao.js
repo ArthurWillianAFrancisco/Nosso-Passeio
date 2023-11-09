@@ -30,9 +30,9 @@ function success(pos){
 }
 
 function error(err){
-    //alert(err);
-    //alert("Erro ao obter a localização");
-    document.write("<h1 style='text-align: center;'>Verifique se seu despositivo esta permitindo o acesso da sua localização.</h1><br><a style='margin-left: 45%;' href='index.html'><span style='text-align: center;'>Voltar para a Home</span></a>")
+    console.log(err);
+    console.log("Erro ao obter a localização");
+    document.write("<body style='background-color: #21a928;'><h1 style='text-align: center;'>Verifique se seu despositivo esta permitindo o acesso da sua localização.</h1><br><a style='margin-left: 45%;' href='index.html'><span style='text-align: center;'>Voltar para a Home</span></a></body>")
 }
 
 var watchID = navigator.geolocation.watchPosition(success, error, {
