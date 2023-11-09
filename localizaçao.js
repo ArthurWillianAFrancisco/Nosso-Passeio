@@ -1,58 +1,38 @@
-/*const long = document.querySelector("#long")
-const lati = document.querySelector("#lati")
-
-
-if(navigator.geolocation){
-
-    navigator.geolocation.getCurrentPosition(mostraLocalizaçao,errorLocalizaçao)
-
-}else{
-    console.log("Geolocalização não suportada")
-}
-
-function mostraLocalizaçao(pos){
-    //console.log(pos)
-
-    let long = pos.coords.longitude
-    let lati = pos.coords.latitude
-
-    document.getElementById("local").innerHTML = "<span class='fw-bold text-info'>Latitude: </span>"
-    + lati + "<br><span class='fw-bold text-info'>Longitude: </span>" + long   
-
-    //criado as opcões
-    var mapOption = {
-        center: [lati, long],
-        zoom: 16
-    }
-
-    //Criando o objeto mapa
-    var map = new L.map('map', mapOption);
-    
-    //criando a camada
-    var layer =  new TitleLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png')
-    
-    console.log(layer)
-
-    map.addLayer(layer)
-}*/
-
-
 function errorLocalizaçao() {
-    console.log("Ero ao obter a localização")
+    alert("Erro ao obter a localização");
+
 }
 
-let h2 = document.querySelector('h2');
+let h2 = document.querySelector('#map');
 var map;
 
 function success(pos){
     console.log(pos.coords.latitude, pos.coords.longitude);
-    h2.textContent = `Latitude:${pos.coords.latitude}, Longitude:${pos.coords.longitude}`;
+    h2.textContent = "Sua possição no mapa";
 
-    var lati = pos.coords.latitude 
+    let long = pos.coords.longitude
+    let lati = pos.coords.latitude
+
+    document.getElementById("lati").innerHTML = lati  
+    document.getElementById("long").innerHTML = long
+    
+    
+    map = L.map('mapid').setView([pos.coords.latitude, pos.coords.longitude], 13);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    L.marker([pos.coords.latitude, pos.coords.longitude]).addTo(map)
+        .bindPopup('Você esta aqui!')
+        .openPopup();
+
 }
 
 function error(err){
-    console.log(err);
+    //alert(err);
+    //alert("Erro ao obter a localização");
+    document.write("<h1 style='text-align: center;'>Verifique se seu despositivo esta permitindo o acesso da sua localização.</h1><br><a style='margin-left: 45%;' href='index.html'><span style='text-align: center;'>Voltar para a Home</span></a>")
 }
 
 var watchID = navigator.geolocation.watchPosition(success, error, {

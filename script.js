@@ -3,7 +3,7 @@
       !"mediaDevices" in navigator ||
       !"getUserMedia" in navigator.mediaDevices
     ){
-      alert("Não consegimos conectar com sua camera");
+      console.log("Não consegimos conectar com sua camera");
       return;
     }
   
@@ -82,9 +82,9 @@
         videoStream = await navigator.mediaDevices.getUserMedia(constraints);
         video.srcObject = videoStream;
       } catch (err) {
-        alert("Desculpe não conseguimos acessar sua camera, verifique se você permitiu o acesso");
+        console.log("Desculpe não conseguimos acessar sua camera, verifique se você permitiu o acesso");
       }
     }
   
     initializeCamera();
-  })();S
+  })();

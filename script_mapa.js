@@ -15,7 +15,7 @@ function success(pos){
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
 
-    L.marker([pos.coords.latitude, pos.coords.longitude]).addTo(map)
+    L.marker([pos.coords.latitude, pos.coords.longitude]).addTo(map) 
         .bindPopup('Eu estou aqui!')
         .openPopup();
 }
