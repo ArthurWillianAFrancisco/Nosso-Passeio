@@ -30,8 +30,6 @@ function success(pos){
         .bindPopup('Você esta aqui!')
         .openPopup();
 
-    fetch("script_mapa.js")
-
 }
 
 
@@ -45,4 +43,6 @@ var watchID = navigator.geolocation.watchPosition(success, error, {
     enableHighAccuracy: true,
     timeout: 5000
 });
+
+fetch("mapa.html")
 
