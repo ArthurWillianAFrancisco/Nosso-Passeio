@@ -5,6 +5,8 @@ function errorLocalizaçao() {
 
 let h2 = document.querySelector('#map');
 var map;
+var lati;
+var long;
 
 function success(pos){
     console.log(pos.coords.latitude, pos.coords.longitude);
@@ -12,6 +14,7 @@ function success(pos){
 
     let long = pos.coords.longitude
     let lati = pos.coords.latitude
+   
 
     document.getElementById("lati").innerHTML = lati  
     document.getElementById("long").innerHTML = long
@@ -27,7 +30,10 @@ function success(pos){
         .bindPopup('Você esta aqui!')
         .openPopup();
 
+    fetch("script_mapa.js")
+
 }
+
 
 function error(err){
     console.log(err);

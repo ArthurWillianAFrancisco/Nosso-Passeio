@@ -2,20 +2,23 @@ function errorLocalizaçao() {
     console.log("Ero ao obter a localização")
 }
 
-let h2 = document.querySelector('h2');
+
 var map;
 
-function success(pos){
-    console.log(pos.coords.latitude, pos.coords.longitude);
-    h2.textContent = `Latitude:${pos.coords.latitude}, Longitude:${pos.coords.longitude}`;
+function success(){
 
-    map = L.map('mapid').setView([pos.coords.latitude, pos.coords.longitude], 13);
+    const lati = document.getElementById("lati");
+    const long = document.getElementById("long");
+    const lat = parseFloat(lati.innerHTML)
+    const lon = parseFloat(long.innerHTML)
+    
+    map = L.map('mapid').setView([lat, lon], 13);
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
 
-    L.marker([pos.coords.latitude, pos.coords.longitude]).addTo(map) 
+    L.marker([lat, lon]).addTo(map) 
         .bindPopup('Eu estou aqui!')
         .openPopup();
 }

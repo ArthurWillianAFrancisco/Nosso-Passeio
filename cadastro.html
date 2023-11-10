@@ -286,21 +286,21 @@
         </div>
         <br>
         <br>
-        <div class="row">
-            <div class="col">
+        <div class="row pt-0 pb-0 p-3">
+            <div class="col card">
                 <h2>Sua possisão atual:</h2>
-                <h3 class="text-info fw-bold m-3">Latitude</h3>
-                <h4 id="lati" class="ms-5 mb-5"></h4>
+                <h3 class="text-info fw-bold m-3" >Latitude</h3>
+                <h4 id="lati" class="ms-5"></h4>
                 <h3 class="text-info fw-bold m-3">Longitude</h3>
                 <h4 id="long" class="ms-5"></h4>
+
             </div>
-            <div class="col">
-                <h2 id="map"></h2>
-                <div class="w-100 h-100" id="mapid"></div>
+            <div class="card col-lg-9 col">
+                <h2 class="text-center" id="map"></h2>
+                <div class="card w-100 h-100" id="mapid"></div>
+                <br>
             </div>
         </div>
-        <br>
-        <br>
         <br>
         <section class="section w-100">
             <div class="container m-0">
@@ -309,7 +309,7 @@
                 <h1 class="title">
                     Tire um foto do local
                 </h1>
-                <p>Dica: coloque o seu celular na horizontal para uma foto mais completa</p>
+                <p class="bg-danger p-2 rounded">Dica: coloque o seu celular na horizontal para uma foto melhor.</p>
                 <div class="d-flex justify-content-center">
                     <video class="border border-primary m-2 mb-0 w-100 h-auto" autoplay id="video"></video> 
                 </div>
@@ -349,7 +349,7 @@
         <canvas class="is-hidden w-75 h-45" id="canvas"></canvas>
         <div class="d-flex flex-row-reverse">
             <a class="p-1" href="index.html"><button class="btn btn-danger btn-lg">Cancelar</button></a>
-            <a class="p-1" href="#"><button type="button" class="btn btn-success btn-lg">Enviar</button></a>
+            <a class="p-1" id="cadatrar" href="#"><button type="button" class="btn btn-success btn-lg">Enviar</button></a>
             <a class="p-1" href="mapa.html"><button class="btn btn-primary btn-lg">mapa</button></a>
         </div>
     </header>
