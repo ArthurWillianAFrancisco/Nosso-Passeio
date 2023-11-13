@@ -16,6 +16,12 @@
 <body class="row p-0 m-0 justify-content-lg-center" style="background-color: #1538AB;" id="corpo">
     <header class="col-lg-9 bg-light p-0 p-3" id="centreliza">
         <h1 class="text-center mb-3">Cadastro de Passeios</h1>
+         <!--Nome ou apelido do usuario-->
+         <div class="form-floating">
+            <input type="text" class="form-control" placeholder="Leave a comment here" id="nome_lugar"></input>
+            <label for="nome">Coloque nome desse lugar: </label>
+        </div>
+        <br>
         <!--Nome ou apelido do usuario-->
         <div class="form-floating">
             <input type="text" class="form-control" placeholder="Leave a comment here" id="nome"></input>
@@ -25,7 +31,7 @@
         <br>
         <div class="form-floating">
             <input type="text" class="form-control" placeholder="Leave a comment here" id="pais"></input>
-            <label for="pais">Coloque seu nome ou apelido</label>
+            <label for="pais">Coloque país onde fica: </label>
         </div>
         <br>
         <!--descrição do lugar-->
@@ -97,7 +103,7 @@
                 </div>
                 <div class="column">
                 <h2 class="title">Fotos</h2>
-                <div id="screenshots w-75 h-45"></div>
+                <div id="screenshots" class="w-75 h-45"></div>
                 <br>
                 </div>
                 </div>
@@ -112,7 +118,7 @@
         </div>
     </header>
     <script src="cadatro.js"></script>
-    <script src="script.js"></script>  
+    <script src="camera.js"></script>  
     <script src="localizaçao.js"></script>
 </body>
 </html>
