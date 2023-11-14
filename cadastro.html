@@ -110,15 +110,16 @@
             </div>
             </div>
         </section>
-        <canvas class="is-hidden w-75 h-45" id="canvas"></canvas>
+        <canvas class="is-hidden" id="canvas" style="width: 15px; height: 15px;"></canvas>
         <div class="d-flex flex-row-reverse">
             <a class="p-1" href="index.html"><button class="btn btn-danger btn-lg">Cancelar</button></a>
-            <a class="p-1" id="cadastrar" href="#"><button type="button" class="btn btn-success btn-lg">Enviar</button></a>
+            <a class="p-1" id="cadastrar" onclick="envi()"><button type="button" class="btn btn-success btn-lg">Enviar</button></a>
             <a class="p-1" href="mapa.html"><button class="btn btn-primary btn-lg">mapa</button></a>
         </div>
     </header>
     <script src="cadatro.js"></script>
     <script src="camera.js"></script>  
     <script src="localizaçao.js"></script>
+    <script src="ler_passeio.js"></script>
 </body>
 </html>
