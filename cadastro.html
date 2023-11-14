@@ -15,6 +15,7 @@
 </head>
 <body class="row p-0 m-0 justify-content-lg-center" style="background-color: #1538AB;" id="corpo">
     <header class="col-lg-9 bg-light p-0 p-3" id="centreliza">
+        <form action="gfg.php">
         <h1 class="text-center mb-3">Cadastro de Passeios</h1>
          <!--Nome ou apelido do usuario-->
          <div class="form-floating">
@@ -111,9 +112,10 @@
             </div>
         </section>
         <canvas class="is-hidden" id="canvas" style="width: 15px; height: 15px;"></canvas>
+        </form>
         <div class="d-flex flex-row-reverse">
             <a class="p-1" href="index.html"><button class="btn btn-danger btn-lg">Cancelar</button></a>
-            <a class="p-1" id="cadastrar" onclick="envi()"><button type="button" class="btn btn-success btn-lg">Enviar</button></a>
+            <a class="p-1"><button class="bnt btn-success btn-lg" onclick="salvar()">Enviar</button></a>
             <a class="p-1" href="mapa.html"><button class="btn btn-primary btn-lg">mapa</button></a>
         </div>
     </header>
@@ -121,5 +123,29 @@
     <script src="camera.js"></script>  
     <script src="localizaçao.js"></script>
     <script src="ler_passeio.js"></script>
+    <script>
+
+        function salvar(){
+
+            const nome_auto = document.getElementById("nome").innerHTML
+            const img = document.getElementById("canvas")
+            const nome_lugar = document.getElementById("nome_lugar").innerHTML
+            const pais = document.getElementById("pais").innerHTML
+            const cidade = document.getElementById("cidade").innerHTML
+            const descricao = document.getElementById("decricao").innerHTML
+            const lati = document.getElementById("lati").innerHTML
+            const long = document.getElementById("long").innerHTML
+
+            const novoPasseio = {nome: nome_auto, nome_lugar: nome_lugar, cidade: cidade, pais: pais, descricao: descricao, latitude: lati, logitude: long};
+
+            
+
+    
+            console.log(novoPasseio);
+
+            alert("ok")
+        }
+
+    </script>
 </body>
 </html>
